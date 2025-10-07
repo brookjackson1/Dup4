@@ -13,9 +13,10 @@ def get_db():
             g.db = pymysql.connect(
                 # Database configuration from environment variables
                 host=os.getenv('DB_HOST'),
-                user=os.getenv('DB_USER'),
+                user=os.getenv('DB_USERNAME'),
                 password=os.getenv('DB_PASSWORD'),
-                database=os.getenv('DB_NAME'),
+                database=os.getenv('DB_DATABASE'),
+                port=int(os.getenv('DB_PORT', 3306)),
                 cursorclass=pymysql.cursors.DictCursor  # Set the default cursor class to DictCursor
             )
         except Exception as e:
