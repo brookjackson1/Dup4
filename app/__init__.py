@@ -6,9 +6,11 @@ app = create_app()
 app.secret_key = 'your-secret'  # Replace with an environment
 
 # Register Blueprints
-from app.blueprints.examples import examples
+from app.blueprints.teams import teams
+from app.blueprints.drivers import drivers
 
-app.register_blueprint(examples, url_prefix='/example')
+app.register_blueprint(teams, url_prefix='/teams')
+app.register_blueprint(drivers, url_prefix='/drivers')
 
 from . import routes
 

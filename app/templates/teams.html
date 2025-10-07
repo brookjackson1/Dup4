@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>F1 Teams</h1>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTeamModal">
+        Add New Team
+    </button>
+
+    <!-- Table displaying all teams -->
+    <table class="table table-striped mt-4">
+        <thead>
+            <tr>
+                <th>Team ID</th>
+                <th>Team Name</th>
+                <th>Country</th>
+                <th>Team Principal</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for team in all_teams %}
+            <tr>
+                <td>{{ team.team_id }}</td>
+                <td>{{ team.team_name }}</td>
+                <td>{{ team.country }}</td>
+                <td>{{ team.team_principal }}</td>
+                <td>{{ team.created_at }}</td>
+                <td>{{ team.updated_at }}</td>
+                <td>
+                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editTeamModal{{ team.team_id }}">
+                        Edit
+                    </button>
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteTeamModal{{ team.team_id }}">
+                        Delete
+                    </button>
+                </td>
+            </tr>
+
+            <!-- Edit Team Modal -->
+            <div class="modal fade" id="editTeamModal{{ team.team_id }}" tabindex="-1" aria-labelledby="editTeamModalLabel{{ team.team_id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editTeamModalLabel{{ team.team_id }}">Edit Team</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form method="post" action="{{ url_for('teams.update_team', team_id=team.team_id) }}">
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="teamName" class="form-label">Team Name</label>
+                                    <input type="text" class="form-control" name="team_name" value="{{ team.team_name }}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="country" class="form-label">Country</label>
+                                    <input type="text" class="form-control" name="country" value="{{ team.country }}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="teamPrincipal" class="form-label">Team Principal</label>
+                                    <input type="text" class="form-control" name="team_principal" value="{{ team.team_principal }}" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-warning">Save Changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Delete Team Modal -->
+            <div class="modal fade" id="deleteTeamModal{{ team.team_id }}" tabindex="-1" aria-labelledby="deleteTeamModalLabel{{ team.team_id }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="deleteTeamModalLabel{{ team.team_id }}">Delete Team</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to delete {{ team.team_name }}? This will also delete all drivers associated with this team.
+                        </div>
+                        <div class="modal-footer">
+                            <form method="post" action="{{ url_for('teams.delete_team', team_id=team.team_id) }}">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Add Team Modal -->
+<div class="modal fade" id="addTeamModal" tabindex="-1" aria-labelledby="addTeamModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addTeamModalLabel">Add New Team</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form method="post" action="{{ url_for('teams.show_teams') }}">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="teamName" class="form-label">Team Name</label>
+                        <input type="text" class="form-control" name="team_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input type="text" class="form-control" name="country" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="teamPrincipal" class="form-label">Team Principal</label>
+                        <input type="text" class="form-control" name="team_principal" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Add Team</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

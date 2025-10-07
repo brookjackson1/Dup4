@@ -15,7 +15,10 @@
       "WebFetch(domain:www.brandcolorcode.com)",
       "Bash(git init:*)",
       "Bash(git remote add:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(del \"app\\blueprints\\examples.py\")",
+      "Bash(del \"app\\templates\\examples.html\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd F1 racing application with teams and drivers\n\n- Created teams and drivers database tables with CASCADE operations\n- Added teams blueprint and template for managing F1 teams\n- Added drivers blueprint and template with team dropdown selection\n- Updated database schema and seed data for F1 racing\n- Removed example blueprint and template\n- Added database setup script (create_db.py)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
