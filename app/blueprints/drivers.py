@@ -16,10 +16,11 @@ def show_drivers():
         nationality = request.form['nationality']
         driver_number = request.form['driver_number']
         date_of_birth = request.form['date_of_birth']
+        photo_url = request.form.get('photo_url', '')
 
         # Insert the new driver into the database
-        cursor.execute('INSERT INTO drivers (first_name, last_name, team_id, nationality, driver_number, date_of_birth) VALUES (%s, %s, %s, %s, %s, %s)',
-                       (first_name, last_name, team_id, nationality, driver_number, date_of_birth))
+        cursor.execute('INSERT INTO drivers (first_name, last_name, team_id, nationality, driver_number, date_of_birth, photo_url) VALUES (%s, %s, %s, %s, %s, %s, %s)',
+                       (first_name, last_name, team_id, nationality, driver_number, date_of_birth, photo_url))
         db.commit()
 
         flash('New driver added successfully!', 'success')
@@ -52,9 +53,10 @@ def update_driver(driver_id):
     nationality = request.form['nationality']
     driver_number = request.form['driver_number']
     date_of_birth = request.form['date_of_birth']
+    photo_url = request.form.get('photo_url', '')
 
-    cursor.execute('UPDATE drivers SET first_name = %s, last_name = %s, team_id = %s, nationality = %s, driver_number = %s, date_of_birth = %s WHERE driver_id = %s',
-                   (first_name, last_name, team_id, nationality, driver_number, date_of_birth, driver_id))
+    cursor.execute('UPDATE drivers SET first_name = %s, last_name = %s, team_id = %s, nationality = %s, driver_number = %s, date_of_birth = %s, photo_url = %s WHERE driver_id = %s',
+                   (first_name, last_name, team_id, nationality, driver_number, date_of_birth, photo_url, driver_id))
     db.commit()
 
     flash('Driver updated successfully!', 'success')

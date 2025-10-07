@@ -5,15 +5,15 @@
 <div class="text-center">
     <div class="card shadow-lg p-5 mb-5">
         <h1 class="display-4 mb-3">
-            <i class="fas fa-graduation-cap me-3"></i>Georgia College & State University
+            <i class="fas fa-flag-checkered me-3"></i>F1 Racing Application
         </h1>
-        <h2 class="h3 text-muted mb-4">MIS Flask Starter Kit</h2>
-        
-        <p class="lead mb-4">Welcome to GCSU's Flask development environment! This starter kit provides a foundation for building web applications using Python and Flask.</p>
-        
+        <h2 class="h3 text-muted mb-4">Formula 1 Team & Driver Management</h2>
+
+        <p class="lead mb-4">Welcome to the F1 Racing App! Manage Formula 1 teams and drivers with full CRUD functionality.</p>
+
         <div class="row justify-content-center mb-4">
             <div class="col-md-10">
-                <p class="mb-0">Georgia College & State University, located in Milledgeville, Georgia, is a public liberal arts university known for its commitment to undergraduate education and student success. Our MIS program prepares students with practical skills in software development, data analysis, and modern web technologies for business applications.</p>
+                <p class="mb-0">Track all 10 F1 teams and 20 drivers for the 2025 season. View team information, manage driver rosters, and see which drivers race for which teams. Features cascade delete operations to maintain data integrity.</p>
             </div>
         </div>
         
@@ -21,26 +21,29 @@
             <div class="col-md-6 mb-3">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <i class="fas fa-code fa-3x mb-3" style="color: var(--gcsu-blue);"></i>
-                        <h5 class="card-title">Modern Development</h5>
-                        <p class="card-text">Built with Flask, Bootstrap, and modern web technologies for responsive design.</p>
+                        <i class="fas fa-users fa-3x mb-3" style="color: var(--f1-red);"></i>
+                        <h5 class="card-title">Team Management</h5>
+                        <p class="card-text">View, add, edit, and delete F1 teams with full CRUD operations.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 mb-3">
                 <div class="card h-100">
                     <div class="card-body text-center">
-                        <i class="fas fa-database fa-3x mb-3" style="color: var(--gcsu-green);"></i>
-                        <h5 class="card-title">Database Ready</h5>
-                        <p class="card-text">Pre-configured for MySQL/PostgreSQL with example CRUD operations.</p>
+                        <i class="fas fa-user-tie fa-3x mb-3" style="color: var(--f1-black);"></i>
+                        <h5 class="card-title">Driver Roster</h5>
+                        <p class="card-text">Manage drivers with team assignments using dropdown selection.</p>
                     </div>
                 </div>
             </div>
         </div>
         
         <div class="mt-4">
-            <a href="{{ url_for('examples.show_examples') }}" class="btn btn-primary btn-lg me-3">
-                <i class="fas fa-eye me-2"></i>View Examples
+            <a href="{{ url_for('teams.show_teams') }}" class="btn btn-primary btn-lg me-3">
+                <i class="fas fa-users me-2"></i>View Teams
+            </a>
+            <a href="{{ url_for('drivers.show_drivers') }}" class="btn btn-primary btn-lg me-3">
+                <i class="fas fa-user-tie me-2"></i>View Drivers
             </a>
             <a href="{{ url_for('about') }}" class="btn btn-outline-secondary btn-lg">
                 <i class="fas fa-info-circle me-2"></i>Learn More
@@ -56,16 +59,16 @@
     }
     
     .btn-outline-secondary {
-        border-color: var(--gcsu-blue);
-        color: var(--gcsu-blue);
+        border-color: var(--f1-black);
+        color: var(--f1-black);
     }
-    
+
     .btn-outline-secondary:hover {
-        background-color: var(--gcsu-blue);
-        border-color: var(--gcsu-blue);
+        background-color: var(--f1-black);
+        border-color: var(--f1-black);
         color: white;
         transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 51, 153, 0.3);
+        box-shadow: 0 4px 8px rgba(21, 21, 30, 0.3);
     }
 </style>
 

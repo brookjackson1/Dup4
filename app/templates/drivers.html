@@ -84,6 +84,11 @@
                                     <label for="dateOfBirth" class="form-label">Date of Birth</label>
                                     <input type="date" class="form-control" name="date_of_birth" value="{{ driver.date_of_birth }}" required>
                                 </div>
+                                <div class="mb-3">
+                                    <label for="photoUrl" class="form-label">Photo URL</label>
+                                    <input type="url" class="form-control" name="photo_url" value="{{ driver.photo_url }}" placeholder="https://example.com/driver-photo.jpg">
+                                    <small class="form-text text-muted">Optional: Enter a URL for the driver's photo</small>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -157,6 +162,11 @@
                     <div class="mb-3">
                         <label for="dateOfBirth" class="form-label">Date of Birth</label>
                         <input type="date" class="form-control" name="date_of_birth" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="photoUrl" class="form-label">Photo URL</label>
+                        <input type="url" class="form-control" name="photo_url" placeholder="https://example.com/driver-photo.jpg">
+                        <small class="form-text text-muted">Optional: Enter a URL for the driver's photo</small>
                     </div>
                 </div>
                 <div class="modal-footer">

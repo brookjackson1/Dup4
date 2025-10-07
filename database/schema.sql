@@ -11,6 +11,7 @@ CREATE TABLE teams (
     team_name VARCHAR(100) NOT NULL UNIQUE,
     country VARCHAR(100),
     team_principal VARCHAR(100),
+    team_color VARCHAR(7),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -24,6 +25,7 @@ CREATE TABLE drivers (
     nationality VARCHAR(100),
     driver_number INT,
     date_of_birth DATE,
+    photo_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (team_id) REFERENCES teams(team_id)

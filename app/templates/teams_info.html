@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1><i class="fas fa-users me-2"></i>F1 Teams Information</h1>
+    <p class="lead">Browse through all Formula 1 teams for the 2025 season</p>
+
+    <!-- Team Selection Dropdown -->
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <label for="teamSelect" class="form-label"><strong>Select a Team:</strong></label>
+            <select class="form-select" id="teamSelect" onchange="filterTeam()">
+                <option value="">-- All Teams --</option>
+                {% for team in all_teams %}
+                <option value="{{ team.team_id }}">{{ team.team_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <!-- Teams Display -->
+    <div class="row">
+        {% for team in all_teams %}
+        <div class="col-md-6 mb-4 team-card" data-team-id="{{ team.team_id }}">
+            <div class="card h-100 team-profile-card">
+                <!-- Team Brand Header -->
+                <div class="team-brand-header" style="background: linear-gradient(135deg, {{ team.team_color }} 0%, {{ team.secondary_color }} 100%);">
+                    <div class="team-logo-container">
+                        {% if team.team_logo %}
+                            <img src="{{ team.team_logo }}" alt="{{ team.team_name }}" class="team-logo">
+                        {% endif %}
+                    </div>
+                    <h3 class="team-name-overlay">{{ team.team_name }}</h3>
+                </div>
+
+                <!-- Team Car Image -->
+                {% if team.car_image %}
+                <div class="team-car-section">
+                    <img src="{{ team.car_image }}" alt="{{ team.team_name }} Car" class="team-car">
+                </div>
+                {% endif %}
+
+                <!-- Team Info -->
+                <div class="card-body">
+                    <div class="team-info-section">
+                        <div class="info-row">
+                            <i class="fas fa-globe info-icon" style="color: {{ team.team_color }};"></i>
+                            <div>
+                                <small class="text-muted">Country</small>
+                                <p class="mb-0"><strong>{{ team.country }}</strong></p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <i class="fas fa-user-tie info-icon" style="color: {{ team.team_color }};"></i>
+                            <div>
+                                <small class="text-muted">Team Principal</small>
+                                <p class="mb-0"><strong>{{ team.team_principal }}</strong></p>
+                            </div>
+                        </div>
+                        <div class="info-row">
+                            <i class="fas fa-calendar info-icon" style="color: {{ team.team_color }};"></i>
+                            <div>
+                                <small class="text-muted">Established</small>
+                                <p class="mb-0"><strong>{{ team.created_at.strftime('%Y') if team.created_at else 'N/A' }}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="{{ url_for('teams.show_teams') }}" class="btn btn-team mt-3 w-100" style="background: linear-gradient(135deg, {{ team.team_color }} 0%, {{ team.secondary_color }} 100%); border: none; color: white;">
+                        <i class="fas fa-edit me-1"></i>Manage Team
+                    </a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+function filterTeam() {
+    var selectedTeam = document.getElementById('teamSelect').value;
+    var teamCards = document.querySelectorAll('.team-card');
+
+    teamCards.forEach(function(card) {
+        if (selectedTeam === '' || card.getAttribute('data-team-id') === selectedTeam) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+</script>
+
+<style>
+    .team-profile-card {
+        position: relative;
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+
+    .team-profile-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+    }
+
+    /* Team Brand Header with Gradient */
+    .team-brand-header {
+        position: relative;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .team-logo-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+
+    .team-logo {
+        width: 180px;
+        height: auto;
+        filter: brightness(0) invert(1) drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+        transition: transform 0.3s ease;
+    }
+
+    .team-profile-card:hover .team-logo {
+        transform: scale(1.1);
+    }
+
+    .team-name-overlay {
+        position: absolute;
+        bottom: 10px;
+        left: 20px;
+        font-size: 1.25rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        margin: 0;
+        z-index: 3;
+    }
+
+    /* Team Car Section */
+    .team-car-section {
+        background: linear-gradient(180deg, #f7f4f1 0%, #ffffff 100%);
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 150px;
+    }
+
+    .team-car {
+        width: 100%;
+        height: auto;
+        max-height: 140px;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+    }
+
+    .team-profile-card:hover .team-car {
+        transform: scale(1.05);
+    }
+
+    /* Team Info Section */
+    .team-info-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .info-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 8px 0;
+    }
+
+    .info-icon {
+        font-size: 1.25rem;
+        width: 24px;
+        flex-shrink: 0;
+        margin-top: 4px;
+    }
+
+    .info-row small {
+        display: block;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+    }
+
+    .info-row p {
+        font-size: 1rem;
+        color: var(--f1-black);
+    }
+
+    /* Team Button */
+    .btn-team {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.875rem;
+        padding: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .btn-team:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+        color: white !important;
+    }
+</style>
+{% endblock %}
