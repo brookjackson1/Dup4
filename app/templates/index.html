@@ -2,82 +2,367 @@
 
 {% block content %}
 
-<!-- Hero Section with F1 Logo -->
-<div class="card shadow-lg mb-5 overflow-hidden" style="background: linear-gradient(135deg, #15151E 0%, #38383F 100%);">
-    <div class="card-body text-center py-5">
-        <img src="{{ url_for('static', filename='images/pages/f1-logo.jpg') }}"
-             alt="Formula 1 Official Logo"
-             onerror="this.src='https://via.placeholder.com/400x150/E10600/FFFFFF?text=F1'"
-             style="max-width: 400px; width: 100%; height: auto; margin-bottom: 2rem;">
-        <h1 class="display-3 fw-bold mb-3 text-white">
-            F1 Racing Application
+<!-- Hero Section with F1 Logo and Racing Stripes -->
+<div class="racing-hero mb-5 position-relative overflow-hidden">
+    <div class="racing-stripes"></div>
+    <div class="hero-content text-center py-5">
+        <div class="logo-container mb-4">
+            <img src="{{ url_for('static', filename='images/pages/f1-logo.jpg') }}"
+                 alt="Formula 1 Official Logo"
+                 onerror="this.src='https://via.placeholder.com/400x150/E10600/FFFFFF?text=F1'"
+                 class="f1-logo">
+        </div>
+        <h1 class="display-2 fw-bold text-white mb-3 racing-title">
+            F1 RACING APP
         </h1>
-        <h2 class="h2 mb-4" style="color: var(--f1-red);">Formula 1 Team & Driver Management</h2>
+        <div class="racing-subtitle mb-4">
+            <span class="badge-racing">2025 SEASON</span>
+            <h2 class="h3 text-white mt-3">Team & Driver Management System</h2>
+        </div>
+        <div class="hero-buttons">
+            <a href="{{ url_for('teams_info') }}" class="btn btn-racing btn-lg me-3 mb-2">
+                <i class="fas fa-flag-checkered me-2"></i>VIEW TEAMS
+            </a>
+            <a href="{{ url_for('drivers_info') }}" class="btn btn-racing-outline btn-lg mb-2">
+                <i class="fas fa-users me-2"></i>VIEW DRIVERS
+            </a>
+        </div>
     </div>
 </div>
 
-<div class="text-center">
-    <div class="card shadow-lg p-5 mb-5">
-        <p class="lead mb-4">Welcome to the F1 Racing App! Manage Formula 1 teams and drivers with full CRUD functionality.</p>
+<!-- Stats Section -->
+<div class="row mb-5 stats-section">
+    <div class="col-md-4 mb-3">
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <div class="stat-number">10</div>
+            <div class="stat-label">F1 TEAMS</div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <div class="stat-number">20</div>
+            <div class="stat-label">DRIVERS</div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-flag-checkered"></i>
+            </div>
+            <div class="stat-number">2025</div>
+            <div class="stat-label">SEASON</div>
+        </div>
+    </div>
+</div>
 
-        <div class="row justify-content-center mb-4">
-            <div class="col-md-10">
-                <p class="mb-0">Track all 10 F1 teams and 20 drivers for the 2025 season. View team information, manage driver rosters, and see which drivers race for which teams. Features cascade delete operations to maintain data integrity.</p>
+<!-- Features Grid -->
+<div class="row g-4 mb-5">
+    <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+            <div class="feature-icon-wrapper">
+                <i class="fas fa-users feature-icon"></i>
             </div>
-        </div>
-        
-        <div class="row justify-content-center">
-            <div class="col-md-6 mb-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-users fa-3x mb-3" style="color: var(--f1-red);"></i>
-                        <h5 class="card-title">Team Management</h5>
-                        <p class="card-text">View, add, edit, and delete F1 teams with full CRUD operations.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-user-tie fa-3x mb-3" style="color: var(--f1-black);"></i>
-                        <h5 class="card-title">Driver Roster</h5>
-                        <p class="card-text">Manage drivers with team assignments using dropdown selection.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="mt-4">
-            <a href="{{ url_for('teams.show_teams') }}" class="btn btn-primary btn-lg me-3">
-                <i class="fas fa-users me-2"></i>View Teams
+            <h5 class="feature-title">TEAM MANAGEMENT</h5>
+            <p class="feature-text">Complete CRUD operations for all F1 teams with branding and stats</p>
+            <a href="{{ url_for('teams.show_teams') }}" class="feature-link">
+                Manage Teams <i class="fas fa-arrow-right ms-2"></i>
             </a>
-            <a href="{{ url_for('drivers.show_drivers') }}" class="btn btn-primary btn-lg me-3">
-                <i class="fas fa-user-tie me-2"></i>View Drivers
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+            <div class="feature-icon-wrapper">
+                <i class="fas fa-user-tie feature-icon"></i>
+            </div>
+            <h5 class="feature-title">DRIVER ROSTER</h5>
+            <p class="feature-text">Track driver profiles with photos, stats, and team assignments</p>
+            <a href="{{ url_for('drivers.show_drivers') }}" class="feature-link">
+                Manage Drivers <i class="fas fa-arrow-right ms-2"></i>
             </a>
-            <a href="{{ url_for('about') }}" class="btn btn-outline-secondary btn-lg">
-                <i class="fas fa-info-circle me-2"></i>Learn More
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+            <div class="feature-icon-wrapper">
+                <i class="fas fa-database feature-icon"></i>
+            </div>
+            <h5 class="feature-title">DATA INTEGRITY</h5>
+            <p class="feature-text">CASCADE operations maintain relationships between teams and drivers</p>
+            <a href="{{ url_for('about') }}" class="feature-link">
+                Learn More <i class="fas fa-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+            <div class="feature-icon-wrapper">
+                <i class="fas fa-trophy feature-icon"></i>
+            </div>
+            <h5 class="feature-title">RACING HISTORY</h5>
+            <p class="feature-text">Explore F1 history, championships, and legendary circuits</p>
+            <a href="{{ url_for('history') }}" class="feature-link">
+                View History <i class="fas fa-arrow-right ms-2"></i>
             </a>
         </div>
     </div>
 </div>
 
 <style>
-    .card {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-    }
-    
-    .btn-outline-secondary {
-        border-color: var(--f1-black);
-        color: var(--f1-black);
+    /* Racing Hero Section */
+    .racing-hero {
+        background: linear-gradient(135deg, #0a0a0f 0%, #1a1a24 50%, #0a0a0f 100%);
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(225, 6, 0, 0.3);
+        position: relative;
     }
 
-    .btn-outline-secondary:hover {
-        background-color: var(--f1-black);
-        border-color: var(--f1-black);
+    .racing-stripes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 50px,
+            rgba(225, 6, 0, 0.05) 50px,
+            rgba(225, 6, 0, 0.05) 100px
+        );
+        pointer-events: none;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .f1-logo {
+        max-width: 450px;
+        width: 100%;
+        height: auto;
+        filter: drop-shadow(0 8px 20px rgba(225, 6, 0, 0.5));
+        animation: logoGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes logoGlow {
+        0%, 100% { filter: drop-shadow(0 8px 20px rgba(225, 6, 0, 0.5)); }
+        50% { filter: drop-shadow(0 8px 30px rgba(225, 6, 0, 0.8)); }
+    }
+
+    .racing-title {
+        font-size: 4rem;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+        text-shadow: 0 0 20px rgba(225, 6, 0, 0.8), 0 0 40px rgba(225, 6, 0, 0.4);
+        font-weight: 900;
+    }
+
+    .badge-racing {
+        background: linear-gradient(135deg, var(--f1-red) 0%, #c20500 100%);
         color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(21, 21, 30, 0.3);
+        padding: 8px 30px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        border-radius: 50px;
+        box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+        display: inline-block;
+    }
+
+    .btn-racing {
+        background: linear-gradient(135deg, var(--f1-red) 0%, #ff1801 100%);
+        border: none;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 20px rgba(225, 6, 0, 0.4);
+    }
+
+    .btn-racing:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(225, 6, 0, 0.6);
+        background: linear-gradient(135deg, #ff1801 0%, var(--f1-red) 100%);
+        color: white;
+    }
+
+    .btn-racing-outline {
+        background: transparent;
+        border: 3px solid white;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+    }
+
+    .btn-racing-outline:hover {
+        background: white;
+        color: var(--f1-black);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Stats Section */
+    .stat-card {
+        background: linear-gradient(135deg, var(--f1-black) 0%, var(--f1-dark-gray) 100%);
+        padding: 40px 20px;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stat-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(225, 6, 0, 0.2), transparent);
+        transition: left 0.5s ease;
+    }
+
+    .stat-card:hover::before {
+        left: 100%;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--f1-red);
+        box-shadow: 0 10px 30px rgba(225, 6, 0, 0.4);
+    }
+
+    .stat-icon {
+        font-size: 3rem;
+        color: var(--f1-red);
+        margin-bottom: 15px;
+    }
+
+    .stat-number {
+        font-size: 3.5rem;
+        font-weight: 900;
+        color: white;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--f1-silver);
+        letter-spacing: 2px;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+        background: white;
+        padding: 35px 25px;
+        border-radius: 15px;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 2px solid #f0f0f0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-10px);
+        border-color: var(--f1-red);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: linear-gradient(135deg, var(--f1-red) 0%, #ff1801 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+
+    .feature-card:hover .feature-icon-wrapper {
+        transform: rotate(360deg) scale(1.1);
+    }
+
+    .feature-icon {
+        font-size: 2rem;
+        color: white;
+    }
+
+    .feature-title {
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--f1-black);
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    .feature-text {
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    .feature-link {
+        color: var(--f1-red);
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+    }
+
+    .feature-link:hover {
+        color: #ff1801;
+        padding-left: 10px;
+    }
+
+    .feature-link i {
+        transition: transform 0.3s ease;
+    }
+
+    .feature-link:hover i {
+        transform: translateX(5px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .racing-title {
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+        }
+
+        .f1-logo {
+            max-width: 300px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+        }
     }
 </style>
 
