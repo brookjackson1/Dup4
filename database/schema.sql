@@ -12,6 +12,9 @@ CREATE TABLE teams (
     country VARCHAR(100),
     team_principal VARCHAR(100),
     team_color VARCHAR(7),
+    team_logo VARCHAR(255),
+    secondary_color VARCHAR(7),
+    car_image VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
