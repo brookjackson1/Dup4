@@ -105,14 +105,16 @@ function filterByDriver() {
         height: 280px;
         overflow: hidden;
         display: flex;
-        align-items: flex-end;
+        align-items: flex-start;
         justify-content: center;
     }
 
     .driver-photo {
-        width: auto;
-        height: 100%;
-        object-fit: contain;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center top;
+        min-height: 100%;
         transition: transform 0.3s ease;
     }
 
