@@ -17,14 +17,14 @@ db_config = {
     'database': os.getenv('DB_DATABASE')
 }
 
-# Correct 2025 F1 official driver photos
+# Correct 2025 F1 official driver photos - close-up headshot style
 driver_photos = {
-    'Kimi Antonelli': 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000000/common/f1/2025/mercedes/andant01/2025mercedesandant01right.webp',
-    'Oliver Bearman': 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000000/common/f1/2025/haas/olibea01/2025haasolibea01right.webp',
-    'Gabriel Bortoleto': 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000000/common/f1/2025/kicksauber/gabbor01/2025kicksaubergabbor01right.webp',
-    'Jack Doohan': 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000000/common/f1/2025/alpine/jacdoo01/2025alpinejacdoo01right.webp',
-    'Isack Hadjar': 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000000/common/f1/2025/racingbulls/isahad01/2025racingbullsisahad01right.webp',
-    'Liam Lawson': 'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000000/common/f1/2025/racingbulls/lialaw01/2025racingbullslialaw01right.webp'
+    'Kimi Antonelli': 'https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/2025/andant01.png',
+    'Oliver Bearman': 'https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/2025/olibea01.png',
+    'Gabriel Bortoleto': 'https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/2025/gabbor01.png',
+    'Jack Doohan': 'https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/2025/jacdoo01.png',
+    'Isack Hadjar': 'https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/2025/isahad01.png',
+    'Liam Lawson': 'https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/2025/lialaw01.png'
 }
 
 def main():
