@@ -2,20 +2,17 @@
 
 {% block content %}
 
-<!-- Hero Image Section -->
-<div class="card shadow-lg mb-5 overflow-hidden">
-    <img src="{{ url_for('static', filename='images/pages/f1-hero.jpg') }}"
-         class="card-img-top"
-         alt="Formula 1 Racing"
-         onerror="this.src='https://via.placeholder.com/1400x600/E10600/FFFFFF?text=F1+Racing+2025'"
-         style="max-height: 500px; object-fit: cover;">
-    <div class="card-img-overlay d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.4);">
-        <div class="text-center text-white">
-            <h1 class="display-3 fw-bold mb-3">
-                <i class="fas fa-flag-checkered me-3"></i>F1 Racing Application
-            </h1>
-            <h2 class="h2 mb-4">Formula 1 Team & Driver Management</h2>
-        </div>
+<!-- Hero Section with F1 Logo -->
+<div class="card shadow-lg mb-5 overflow-hidden" style="background: linear-gradient(135deg, #15151E 0%, #38383F 100%);">
+    <div class="card-body text-center py-5">
+        <img src="{{ url_for('static', filename='images/pages/f1-logo.jpg') }}"
+             alt="Formula 1 Official Logo"
+             onerror="this.src='https://via.placeholder.com/400x150/E10600/FFFFFF?text=F1'"
+             style="max-width: 400px; width: 100%; height: auto; margin-bottom: 2rem;">
+        <h1 class="display-3 fw-bold mb-3 text-white">
+            F1 Racing Application
+        </h1>
+        <h2 class="h2 mb-4" style="color: var(--f1-red);">Formula 1 Team & Driver Management</h2>
     </div>
 </div>
 
