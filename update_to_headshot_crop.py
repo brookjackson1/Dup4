@@ -17,48 +17,48 @@ db_config = {
     'database': os.getenv('DB_DATABASE')
 }
 
-# Driver photos showing shoulders up with more space around face
-# Using c_crop,g_face with z_0.6 for zoomed out view to see face better
+# Driver photos with complete face visible (no eyes cut off) and shoulders included
+# Using c_crop,g_face with z_0.5 and y offset to ensure full face is shown
 driver_photos = {
     # Ferrari
-    'Lewis Hamilton': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/ferrari/lewham01/2025ferrarilewham01right.webp',
-    'Charles Leclerc': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/ferrari/chalec01/2025ferrarichalec01right.webp',
+    'Lewis Hamilton': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/ferrari/lewham01/2025ferrarilewham01right.webp',
+    'Charles Leclerc': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/ferrari/chalec01/2025ferrarichalec01right.webp',
 
     # Mercedes
-    'George Russell': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/mercedes/georus01/2025mercedesgeorus01right.webp',
-    'Kimi Antonelli': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/mercedes/andant01/2025mercedesandant01right.webp',
+    'George Russell': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/mercedes/georus01/2025mercedesgeorus01right.webp',
+    'Kimi Antonelli': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/mercedes/andant01/2025mercedesandant01right.webp',
 
     # Red Bull Racing
-    'Max Verstappen': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/redbullracing/maxver01/2025redbullracingmaxver01right.webp',
-    'Liam Lawson': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/redbullracing/lialaw01/2025redbullracinglialaw01right.webp',
+    'Max Verstappen': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/redbullracing/maxver01/2025redbullracingmaxver01right.webp',
+    'Liam Lawson': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/redbullracing/lialaw01/2025redbullracinglialaw01right.webp',
 
     # McLaren
-    'Lando Norris': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/mclaren/lannor01/2025mclarenlannor01right.webp',
-    'Oscar Piastri': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/mclaren/oscpia01/2025mclarenocspia01right.webp',
+    'Lando Norris': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/mclaren/lannor01/2025mclarenlannor01right.webp',
+    'Oscar Piastri': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/mclaren/oscpia01/2025mclarenocspia01right.webp',
 
     # Aston Martin
-    'Fernando Alonso': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/astonmartin/feralo01/2025astonmartinferalo01right.webp',
-    'Lance Stroll': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/astonmartin/lanstr01/2025astonmartinlanstr01right.webp',
+    'Fernando Alonso': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/astonmartin/feralo01/2025astonmartinferalo01right.webp',
+    'Lance Stroll': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/astonmartin/lanstr01/2025astonmartinlanstr01right.webp',
 
     # Alpine
-    'Pierre Gasly': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/alpine/piegas01/2025alpinepiegas01right.webp',
-    'Jack Doohan': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/alpine/jacdoo01/2025alpinejacdoo01right.webp',
+    'Pierre Gasly': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/alpine/piegas01/2025alpinepiegas01right.webp',
+    'Jack Doohan': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/alpine/jacdoo01/2025alpinejacdoo01right.webp',
 
     # Williams
-    'Carlos Sainz': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/williams/carsai01/2025williamscarsai01right.webp',
-    'Alex Albon': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/williams/alealb01/2025williamsalealb01right.webp',
+    'Carlos Sainz': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/williams/carsai01/2025williamscarsai01right.webp',
+    'Alex Albon': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/williams/alealb01/2025williamsalealb01right.webp',
 
     # RB (Racing Bulls)
-    'Yuki Tsunoda': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/racingbulls/yuktsu01/2025racingbullsyuktsu01right.webp',
-    'Isack Hadjar': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/racingbulls/isahad01/2025racingbullsisahad01right.webp',
+    'Yuki Tsunoda': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/racingbulls/yuktsu01/2025racingbullsyuktsu01right.webp',
+    'Isack Hadjar': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/racingbulls/isahad01/2025racingbullsisahad01right.webp',
 
     # Kick Sauber
-    'Nico Hulkenberg': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/kicksauber/nichul01/2025kicksaubernichul01right.webp',
-    'Gabriel Bortoleto': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/kicksauber/gabbor01/2025kicksaubergabbor01right.webp',
+    'Nico Hulkenberg': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/kicksauber/nichul01/2025kicksaubernichul01right.webp',
+    'Gabriel Bortoleto': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/kicksauber/gabbor01/2025kicksaubergabbor01right.webp',
 
     # Haas
-    'Esteban Ocon': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/haas/estoco01/2025haasestoco01right.webp',
-    'Oliver Bearman': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.6/q_auto/v1740000000/common/f1/2025/haas/olibea01/2025haasolibea01right.webp',
+    'Esteban Ocon': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/haas/estoco01/2025haasestoco01right.webp',
+    'Oliver Bearman': 'https://media.formula1.com/image/upload/c_crop,g_face,w_800,h_1000,z_0.5,y_0.1/q_auto/v1740000000/common/f1/2025/haas/olibea01/2025haasolibea01right.webp',
 }
 
 def main():
