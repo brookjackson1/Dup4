@@ -1,7 +1,96 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>About</h1>
-<br>
-<p>This website is designed to display example data tables using Pandas and Flask operations. Users can perform basic CRUD operations to add, manipulate, and sort records. A calculation of average points per player will also be available.</p>
+<div class="container mt-4">
+    <h1><i class="fas fa-info-circle me-2"></i>About F1 Racing App</h1>
+    <p class="lead">Your comprehensive Formula 1 team and driver management system</p>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm mb-4">
+                <img src="{{ url_for('static', filename='images/pages/f1-about.jpg') }}"
+                     class="card-img-top"
+                     alt="Formula 1 About"
+                     onerror="this.src='https://via.placeholder.com/1200x400/E10600/FFFFFF?text=Formula+1+Racing+League'"
+                     style="max-height: 400px; object-fit: cover;">
+                <div class="card-body">
+                    <h2 class="card-title">What is F1 Racing App?</h2>
+                    <p class="card-text">
+                        This web application is designed to manage and display Formula 1 racing data for the 2025 season.
+                        Built with Flask and MySQL, it provides a comprehensive platform for tracking all 10 F1 teams
+                        and 20 drivers with full CRUD (Create, Read, Update, Delete) functionality.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-database me-2" style="color: var(--f1-red);"></i>Database Management</h4>
+                    <p class="card-text">
+                        Utilizes AWS RDS MySQL database with proper foreign key relationships and CASCADE operations
+                        to maintain data integrity. Team and driver information is stored with full relational support.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-edit me-2" style="color: var(--f1-red);"></i>CRUD Operations</h4>
+                    <p class="card-text">
+                        Perform complete Create, Read, Update, and Delete operations on teams and drivers.
+                        Add new teams, update driver rosters, assign drivers to teams, and manage all racing data.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-palette me-2" style="color: var(--f1-red);"></i>Team Branding</h4>
+                    <p class="card-text">
+                        Each team features authentic branding including team colors, logos, and car images.
+                        The interface dynamically displays team information with visual elements for better user experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-user-tie me-2" style="color: var(--f1-red);"></i>Driver Profiles</h4>
+                    <p class="card-text">
+                        Comprehensive driver profiles with photos, nationalities, driver numbers, dates of birth,
+                        and team assignments. All 20 drivers for the 2025 season are included with official imagery.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title">Technologies Used</h3>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check-circle me-2" style="color: var(--f1-red);"></i><strong>Flask:</strong> Python web framework for backend</li>
+                        <li><i class="fas fa-check-circle me-2" style="color: var(--f1-red);"></i><strong>MySQL:</strong> AWS RDS hosted relational database</li>
+                        <li><i class="fas fa-check-circle me-2" style="color: var(--f1-red);"></i><strong>Bootstrap 5:</strong> Responsive CSS framework</li>
+                        <li><i class="fas fa-check-circle me-2" style="color: var(--f1-red);"></i><strong>Jinja2:</strong> Template engine for dynamic content</li>
+                        <li><i class="fas fa-check-circle me-2" style="color: var(--f1-red);"></i><strong>Font Awesome:</strong> Icon library</li>
+                        <li><i class="fas fa-check-circle me-2" style="color: var(--f1-red);"></i><strong>PyMySQL:</strong> MySQL database connector</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

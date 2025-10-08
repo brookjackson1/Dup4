@@ -2,13 +2,25 @@
 
 {% block content %}
 
+<!-- Hero Image Section -->
+<div class="card shadow-lg mb-5 overflow-hidden">
+    <img src="{{ url_for('static', filename='images/pages/f1-hero.jpg') }}"
+         class="card-img-top"
+         alt="Formula 1 Racing"
+         onerror="this.src='https://via.placeholder.com/1400x600/E10600/FFFFFF?text=F1+Racing+2025'"
+         style="max-height: 500px; object-fit: cover;">
+    <div class="card-img-overlay d-flex align-items-center justify-content-center" style="background: rgba(0,0,0,0.4);">
+        <div class="text-center text-white">
+            <h1 class="display-3 fw-bold mb-3">
+                <i class="fas fa-flag-checkered me-3"></i>F1 Racing Application
+            </h1>
+            <h2 class="h2 mb-4">Formula 1 Team & Driver Management</h2>
+        </div>
+    </div>
+</div>
+
 <div class="text-center">
     <div class="card shadow-lg p-5 mb-5">
-        <h1 class="display-4 mb-3">
-            <i class="fas fa-flag-checkered me-3"></i>F1 Racing Application
-        </h1>
-        <h2 class="h3 text-muted mb-4">Formula 1 Team & Driver Management</h2>
-
         <p class="lead mb-4">Welcome to the F1 Racing App! Manage Formula 1 teams and drivers with full CRUD functionality.</p>
 
         <div class="row justify-content-center mb-4">
