@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1><i class="fas fa-history me-2"></i>Formula 1 History</h1>
+    <p class="lead">Discover the rich heritage of Formula 1 racing since 1950</p>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/pages/f1-history.jpg') }}"
+                     class="card-img-top"
+                     alt="Formula 1 History"
+                     onerror="this.src='https://via.placeholder.com/1200x400/E10600/FFFFFF?text=F1+History+Since+1950'"
+                     style="max-height: 400px; object-fit: cover;">
+                <div class="card-body">
+                    <h2 class="card-title">The Birth of Formula 1</h2>
+                    <p class="card-text">
+                        Formula One (F1) was founded in 1950 as the pinnacle of international open-wheel motor racing.
+                        The FIA Formula One World Championship has been one of the premier forms of racing around the world
+                        since its inaugural season in 1950.
+                    </p>
+
+                    <h3 class="mt-4">Key Milestones</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>1950:</strong> First World Championship race at Silverstone, UK</li>
+                        <li class="list-group-item"><strong>1958:</strong> Introduction of the Constructor's Championship</li>
+                        <li class="list-group-item"><strong>1977:</strong> First turbocharged engine wins a race</li>
+                        <li class="list-group-item"><strong>2014:</strong> Introduction of hybrid power units</li>
+                        <li class="list-group-item"><strong>2022:</strong> Major regulation changes for closer racing</li>
+                    </ul>
+
+                    <h3 class="mt-4">Legendary Eras</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h5>The Turbo Era (1977-1988)</h5>
+                            <p>Revolutionary turbocharged engines producing over 1,000 horsepower in qualifying trim.</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h5>The Hybrid Era (2014-Present)</h5>
+                            <p>Advanced hybrid power units combining internal combustion with electric motors for efficiency and performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

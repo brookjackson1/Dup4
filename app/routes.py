@@ -34,3 +34,16 @@ def drivers_info():
     all_teams = cursor.fetchall()
 
     return render_template('drivers_info.html', all_drivers=all_drivers, all_teams=all_teams)
+
+# Static Pages
+@app.route('/history')
+def history():
+    return render_template('history.html')
+
+@app.route('/championships')
+def championships():
+    return render_template('championships.html')
+
+@app.route('/circuits')
+def circuits():
+    return render_template('circuits.html')

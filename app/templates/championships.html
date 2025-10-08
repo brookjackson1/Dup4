@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1><i class="fas fa-trophy me-2"></i>F1 World Championships</h1>
+    <p class="lead">Celebrating the greatest champions in Formula 1 history</p>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm">
+                <img src="{{ url_for('static', filename='images/pages/f1-championship.jpg') }}"
+                     class="card-img-top"
+                     alt="F1 Championship Trophy"
+                     onerror="this.src='https://via.placeholder.com/1200x400/E10600/FFFFFF?text=World+Championship+Trophy'"
+                     style="max-height: 400px; object-fit: cover;">
+                <div class="card-body">
+                    <h2 class="card-title">Most Successful Drivers</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Driver</th>
+                                    <th>Championships</th>
+                                    <th>Years</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Michael Schumacher</td>
+                                    <td>7</td>
+                                    <td>1994, 1995, 2000, 2001, 2002, 2003, 2004</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Lewis Hamilton</td>
+                                    <td>7</td>
+                                    <td>2008, 2014, 2015, 2017, 2018, 2019, 2020</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Max Verstappen</td>
+                                    <td>3</td>
+                                    <td>2021, 2022, 2023</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Juan Manuel Fangio</td>
+                                    <td>5</td>
+                                    <td>1951, 1954, 1955, 1956, 1957</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Alain Prost</td>
+                                    <td>4</td>
+                                    <td>1985, 1986, 1989, 1993</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h2 class="card-title mt-5">Most Successful Constructors</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Constructor</th>
+                                    <th>Championships</th>
+                                    <th>Years Active</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Ferrari</td>
+                                    <td>16</td>
+                                    <td>1950-Present</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mercedes</td>
+                                    <td>8</td>
+                                    <td>2014-2021</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Williams</td>
+                                    <td>9</td>
+                                    <td>1977-Present</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>McLaren</td>
+                                    <td>8</td>
+                                    <td>1966-Present</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Red Bull Racing</td>
+                                    <td>6</td>
+                                    <td>2005-Present</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

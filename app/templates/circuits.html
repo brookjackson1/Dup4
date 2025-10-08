@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1><i class="fas fa-map-marked-alt me-2"></i>Famous F1 Circuits</h1>
+    <p class="lead">Explore the most iconic racing circuits in Formula 1</p>
+
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm mb-4">
+                <img src="{{ url_for('static', filename='images/pages/f1-circuits.jpg') }}"
+                     class="card-img-top"
+                     alt="Formula 1 Circuits"
+                     onerror="this.src='https://via.placeholder.com/1200x400/E10600/FFFFFF?text=Iconic+F1+Racing+Circuits'"
+                     style="max-height: 400px; object-fit: cover;">
+                <div class="card-body">
+                    <h2 class="card-title">Legendary Racing Venues</h2>
+                    <p class="card-text">
+                        Formula 1 races on some of the world's most challenging and prestigious circuits.
+                        Each track has its own unique character and history.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-flag-checkered me-2" style="color: var(--f1-red);"></i>Monaco Grand Prix</h4>
+                    <p><strong>Location:</strong> Monte Carlo, Monaco</p>
+                    <p><strong>Circuit Length:</strong> 3.337 km (2.074 mi)</p>
+                    <p><strong>First Race:</strong> 1950</p>
+                    <p class="card-text">
+                        The most prestigious race in Formula 1, held on the narrow streets of Monte Carlo.
+                        Known for its tight corners, elevation changes, and the famous tunnel section.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-flag-checkered me-2" style="color: var(--f1-red);"></i>Silverstone Circuit</h4>
+                    <p><strong>Location:</strong> Silverstone, England</p>
+                    <p><strong>Circuit Length:</strong> 5.891 km (3.660 mi)</p>
+                    <p><strong>First Race:</strong> 1950</p>
+                    <p class="card-text">
+                        Home of British motorsport and host of the first-ever Formula 1 World Championship race.
+                        Famous for its high-speed corners like Copse, Maggots, and Becketts.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-flag-checkered me-2" style="color: var(--f1-red);"></i>Monza Circuit</h4>
+                    <p><strong>Location:</strong> Monza, Italy</p>
+                    <p><strong>Circuit Length:</strong> 5.793 km (3.600 mi)</p>
+                    <p><strong>First Race:</strong> 1950</p>
+                    <p class="card-text">
+                        The "Temple of Speed" and Ferrari's home race. One of the fastest circuits on the calendar
+                        with long straights and passionate Italian fans known as the Tifosi.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title"><i class="fas fa-flag-checkered me-2" style="color: var(--f1-red);"></i>Spa-Francorchamps</h4>
+                    <p><strong>Location:</strong> Stavelot, Belgium</p>
+                    <p><strong>Circuit Length:</strong> 7.004 km (4.352 mi)</p>
+                    <p><strong>First Race:</strong> 1950</p>
+                    <p class="card-text">
+                        One of the longest and most challenging circuits, famous for Eau Rouge corner complex.
+                        Known for unpredictable weather and dramatic elevation changes through the Ardennes forest.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
